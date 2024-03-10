@@ -1,3 +1,13 @@
+import Email from "../components/icons/Email.astro";
+import Github from "../components/icons/Github.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+
+interface SocialMedia {
+  name: string;
+  link: string;
+  svg: (_props: Record<string, any>) => any;
+}
+
 /**
  * @description The purpose of this file is to make
  */
@@ -21,26 +31,30 @@ const TLDR = `Sara, 24, Full-stack developer, For more information check my Gith
 /**
  * @description my full-stack projects
  */
-const fs:object[] = [];
+const fs: object[] = [];
 
 /**
  * @description my frontend mentor projects
  */
-const fe:object[] =[];
+const fe: object[] = [];
 
 /**
  * @description my other interesting projects
  */
-const op:object[] = [];
+const op: object[] = [];
 
 /**
  * @description my other interests
  */
-const myInterests:object[] = [];
+const myInterests: object[] = [];
 
 /**
- * @description my socials, 
+ * @description my socials,
  */
-const mySocials:object[] = [];
+const mySocials: SocialMedia[] = [
+  { name: "linkedin", link: process.env.PUBLIC_LINKEDIN as string, svg: LinkedIn },
+  { name: "github", link: process.env.PUBLIC_GITHUB as string, svg: Github },
+  { name: "email", link: process.env.PUBLIC_EMAIL as string, svg: Email },
+];
 
-export { mainHeading, whatIDo, TLDR, fs, fe, op, myInterests, mySocials};
+export { mainHeading, whatIDo, TLDR, fs, fe, op, myInterests, mySocials };

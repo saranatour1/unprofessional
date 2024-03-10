@@ -1,0 +1,13 @@
+---
+import { mySocials } from "../constants/index";
+---
+
+<header class="flex gap-x-4">
+  {
+    mySocials.map((i) => (
+      <a class="hover:text-neutral-100 hover:cursor-pointer after:content-['/']" href={i.link} target="_blank">
+        {i.name}
+      </a>
+    ))
+  }
+</header>
