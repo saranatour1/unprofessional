@@ -2,6 +2,7 @@
 import NavBar from '../components/NavBar.astro';
 import BaseHead from '../components/BaseHead.astro';
 import BlurCircles from "../components/BlurCircles.astro";
+import Footer from "../components/Footer.astro";
 import '@fontsource/fira-sans-condensed';
 import '@fontsource-variable/fraunces';
 
@@ -20,6 +21,7 @@ const { title,description } = Astro.props;
 		<BlurCircles position='top' />
 		<BlurCircles position='bottom' color='bg-blue-800' />
 		<slot />
+		<Footer/>
 	</body>
 </html>
 
