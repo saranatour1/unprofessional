@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar.astro';
 import BaseHead from '../components/BaseHead.astro';
 import BlurCircles from "../components/BlurCircles.astro";
 import '@fontsource/fira-sans-condensed';
+import '@fontsource-variable/fraunces';
 
 interface Props {
 	title: string;
@@ -14,7 +15,7 @@ const { title,description } = Astro.props;
 <!doctype html>
 <html lang="en">
 		<BaseHead title={title} description={ description ?? "Sara Natour's Portfolio site, But a little more interesting."} />
-	<body class=" mx-auto flex min-h-screen w-full max-w-full px-10 flex-col gap-9 bg-neutral-950 py-8 text-sm text-neutral-400 md:gap-20 md:py-16 font-fira-sans">
+	<body class="flex mx-auto min-h-screen w-full  max-w-[52rem] flex-col gap-9 items-start justify-start bg-neutral-950 py-12 text-sm text-neutral-400 md:gap-20 md:py-12 font-fira-sans ">
 		<NavBar />
 		<BlurCircles position='top' />
 		<BlurCircles position='bottom' color='bg-blue-800' />

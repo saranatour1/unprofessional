@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.5.6",
     "@astrojs/sitemap": "^3.1.1",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/fraunces": "^5.0.20",
     "@fontsource/fira-sans-condensed": "^5.0.12",
     "astro": "^4.4.15",
     "astro-i18n": "^2.2.4",

@@ -1,0 +1,14 @@
+---
+  import {type Interest} from "../constants/index";
+  interface Props{
+    intrest:Interest,
+  }
+  const {intrest} = Astro.props;
+---
+
+<span class="group flex w-full cursor-pointer flex-col justify-start items-start gap-2 rounded-md border border-neutral-700 p-4 transition-all duration-300 hover:-translate-y-2 hover:border-neutral-400  ps-4">
+  <div class="flex flex-col gap-4 md:flex-col md:items-start justify-start">
+    <p class=" text-neutral-100">{intrest.name}</p>
+    <p>{intrest.reason}</p>
+  </div>
+</span>

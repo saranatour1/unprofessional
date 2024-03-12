@@ -5,6 +5,7 @@ export default {
 		extend: {
 			fontFamily:{
 				'fira-sans':['Fira Sans Condensed', 'sans-serif'],
+				'Fraunces':['Fraunces Variable','serif'],
 			}
 		},
 	},

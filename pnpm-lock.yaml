@@ -14,6 +14,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.4.15)(tailwindcss@3.4.1)
+  '@fontsource-variable/fraunces':
+    specifier: ^5.0.20
+    version: 5.0.20
   '@fontsource/fira-sans-condensed':
     specifier: ^5.0.12
     version: 5.0.12
@@ -616,6 +619,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource-variable/fraunces@5.0.20:
+    resolution: {integrity: sha512-GAk0OiJXmxDT6bLl8G8XV5yguuOWgkK0jyNF3zL9gfUqCAvIVaBE+1LDStuvg0KTzGYE5vlj1xBDPTIT0Qw3/A==}
+    dev: false
 
   /@fontsource/fira-sans-condensed@5.0.12:
     resolution: {integrity: sha512-dauwqTs+NqTkm9XoxBNoN5huN8BAAfQ78vAuPufcJybkM3Arqsvpt863bBKNo8bgwDO4pqXLraQQr4wZlK928w==}
