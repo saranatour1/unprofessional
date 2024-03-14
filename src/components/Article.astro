@@ -1,0 +1,40 @@
+---
+import { type SelectedProjects, type Interest } from "../constants/index";
+import ProjectCard from "./ProjectCard.astro";
+import SmallTalk from "./SmallTalk.astro";
+
+interface Props {
+  name: string;
+  items: SelectedProjects[] | Interest[];
+}
+
+const { items, name } = Astro.props;
+
+const isProject = (item:SelectedProjects| Interest) => {
+  return "mainTechnologies" in item;
+};
+
+const isInterest = (item:SelectedProjects |Interest) => {
+  return "reason" in item;
+};
+---
+
+<article class="flex flex-col gap-8 w-full" slot="descreption">
+  <header class="flex w-full flex-row justify-between gap-2">
+    <h3 class="text-lg text-neutral-100 font-Fraunces font-bold">
+      {name} ({items.length})
+    </h3>
+  </header>
+  {items.length === 0 && <p>Somtehing went wrong.</p>}
+  <section class="flex flex-col gap-4">
+    {
+      items.length !== 0 &&
+        items.map((item) => (
+          <div>
+            {isProject(item) && <ProjectCard project={item as SelectedProjects} />}
+            {isInterest(item) && <SmallTalk intrest={item as Interest} />}
+          </div>
+        ))
+    }
+  </section>
+</article>

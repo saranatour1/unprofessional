@@ -1,9 +1,15 @@
 ---
-import { mySocials } from "../constants/index";
+import type { SocialMedia } from '../constants'
+
+  interface Props{
+    socials:SocialMedia[]
+  }
+
+  const {socials} = Astro.props;
 ---
 <header class="flex gap-x-4 items-center justify-start w-full max-md:px-4 max-sm:px-4">
   {
-    mySocials.map((i) => (
+    socials?.map((i) => (
       <a class="hover:text-neutral-100 hover:cursor-pointer after:content-['/'] hover:after:text-yellow-400 transition-colors" href={i.link} target="_blank">
         {i.name}
       </a>

@@ -1,27 +1,31 @@
 ---
-import NavBar from '../components/NavBar.astro';
-import BaseHead from '../components/BaseHead.astro';
+import NavBar from "../components/NavBar.astro";
+import BaseHead from "../components/BaseHead.astro";
 import BlurCircles from "../components/BlurCircles.astro";
 import Footer from "../components/Footer.astro";
-import '@fontsource/fira-sans-condensed';
-import '@fontsource-variable/fraunces';
+import "@fontsource/fira-sans-condensed";
+import "@fontsource-variable/fraunces";
+import type { SocialMedia } from "../constants";
 
 interface Props {
-	title: string;
-	description?:string;
+  title: string;
+  description?: string;
+  socials?: SocialMedia[];
 }
 
-const { title,description } = Astro.props;
+const { title, description, socials } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
-		<BaseHead title={title} description={ description ?? "Sara Natour's Portfolio site, But a little more interesting."} />
-	<body class="flex mx-auto min-h-screen w-full max-w-[52rem] flex-col gap-9 items-start justify-start bg-neutral-950 py-12 text-sm text-neutral-400 md:gap-20 md:py-12 font-fira-sans">
-		<NavBar />
-		<BlurCircles position='top' />
-		<BlurCircles position='bottom' color='bg-blue-800' />
-		<slot />
-		<Footer/>
-	</body>
+  <BaseHead title={title} description={description ?? "Sara Natour's Portfolio site, But a little more interesting."} />
+  <body
+    class="flex mx-auto min-h-screen w-full max-w-[52rem] flex-col gap-9 items-start justify-start bg-neutral-950 py-12 text-sm text-neutral-400 md:gap-20 md:py-12 font-fira-sans"
+  >
+    <NavBar socials={socials as SocialMedia[]} />
+    <BlurCircles position="top" />
+    <BlurCircles position="bottom" color="bg-blue-800" />
+    <slot />
+    <Footer socials={socials as SocialMedia[]} />
+  </body>
 </html>
-

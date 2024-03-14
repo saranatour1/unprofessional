@@ -1,106 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { mainHeading } from "../constants";
 import Section from "../components/Section.astro";
 import Heading from "../components/Heading.astro";
-import { TLDR, whatIDo } from "../constants";
-let toggle = false;
-import { fs, op, myInterests } from "../constants";
-import ProjectCard from "../components/ProjectCard.astro";
-import SmallTalk from "../components/SmallTalk.astro"
----
+import Article from "../components/Article.astro";
+import data from "../constants/data.json";
+import type { SocialMedia } from "../constants";
 
-<Layout title={mainHeading}>
+const replacedData = data.socials.map((item) => ({
+  ...item,
+  link: import.meta.env[item.link],
+}));
+---
+<Layout title={data.meta.title} socials={replacedData as SocialMedia[]}>
   <main class="flex flex-col gap-20 w-full max-md:px-4">
     <Section>
       <Heading slot="main-heading">Hello, I'm Sara</Heading>
-      <button
-        slot="descreption"
-        class="text-neutral-100 text-left"
-        id="tldr"
-        popovertarget="mypopover-1"
-        popovertarget="show"
-      >
-        {TLDR}
-      </button>
-      <div id="mypopover-1" popover="" slot="other" class="hidden-element">
-        {whatIDo}
+      <div slot="descreption" class="leading-8 font-extralight">
+        {data.introduction["main-section"].summary}
+        <Heading class="text-3xl font-bold text-neutral-100 mt-4">TL;DR</Heading>
+        <span>{data.introduction["secondary-section"].summary}</span>
       </div>
     </Section>
 
-    <Section>
-    <article class="flex flex-col gap-8 w-full" slot="descreption">
-      <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100 font-Fraunces font-bold">
-          Selected projects ({fs.length})
-        </h3>
-      </header>
-      {fs.length === 0 && <p>Oops, I must work^^^^^</p>}
-
-      <section class="flex flex-col gap-4">
-        {
-          fs.length !== 0 &&
-            fs.map((project) => <ProjectCard {project} />)
-        }
-      </section>
-    </article>
-    </Section>
-
-    <Section>
-      <article class="flex flex-col gap-8 w-full" slot="descreption">
-        <header class="flex w-full flex-row justify-between gap-2">
-          <h3 class="text-lg text-neutral-100 font-Fraunces font-bold">
-            other intersting projects ({op.length})
-          </h3>
-        </header>
-        {op.length === 0 && <p>Oops, I must work^^^^^</p>}
-  
-        <section class="flex flex-col gap-4">
-          {
-            op.length !== 0 &&
-              op.map((project) => <ProjectCard {project} />)
-          }
-        </section>
-      </article>
-    </Section>
-
-    <Section>
-      <article class="flex flex-col gap-8 w-full" slot="descreption">
-        <header class="flex w-full flex-row justify-between gap-2">
-          <h3 class="text-lg text-neutral-100 font-Fraunces font-bold">
-            Intrests ({myInterests.length})
-          </h3>
-        </header>
-        {myInterests.length === 0 && <p>Oops, I must work^^^^^</p>}
-  
-        <section class="flex flex-col gap-4">
-          {
-            myInterests.length !== 0 &&
-              myInterests.map((intrest) => <SmallTalk {intrest} />)
-          }
-        </section>
-      </article>
-    </Section>
+    <Article name="Selected Projects" items={data["Selected-Projects"]} />
+    <Article name="Other Projects" items={data["other-projects"]} />
+    <Article name="Interests" items={data["interests"]} />
   </main>
 </Layout>
-
-<style scoped>
-  #mypopover-1 {
-    left: 8px;
-  }
-  :popover-open {
-    position: absolute;
-    inset: unset;
-    top: 40px;
-  }
-  [popover]:popover-open:not(dialog) {
-    overlay: auto !important;
-  }
-
-  @-moz-document url-prefix() {
-  .hidden-element {
-    display: none; 
-  }
-}
-
-</style>

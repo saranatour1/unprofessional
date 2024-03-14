@@ -1,0 +1,90 @@
+{
+    "meta":{
+      "title":"The un-professional version of My Portfolio"
+    },
+    "introduction": {
+    "main-section": {
+      "heading": "Hello, I'm Sara.",
+      "summary": "I'm a web developer with an electrical engineering background. I enjoy building things on both the front and back ends, taking on challenges, and turning my ideas into real projects, whether they're small or big. Even though I've been in the industry for a short time, I've learned a lot and created some cool stuff. I like working with JavaScript frameworks like Vue and Astro, but I'm open to trying out different technologies. I'm a quick learner and always curious to learn more and get involved in projects."
+    },
+    "secondary-section": {
+      "heading": "TL;DR",
+      "summary": "Sara, 25, Full-stack developer, For more information check my Github account."
+    }
+  },
+  "Selected-Projects": [
+    {
+      "name": "Moods",
+      "link": "https://github.com/saranatour1/Moods",
+      "mainTechnologies": ["Django", "SQLLite"],
+      "flag": true
+    },
+    {
+      "name": "Travel Designer",
+      "link": "https://github.com/saranatour1/Traval-Designer",
+      "mainTechnologies": ["React", "NodeJs", "Tailwindcss"],
+      "flag": true
+    },
+    {
+      "name": "FeedMe",
+      "link": "https://github.com/saranatour1/FeedMe",
+      "mainTechnologies": ["SpringBoot", "Google Maps Api"],
+      "flag": true
+    },
+    {
+      "name": "StarryNight.com3",
+      "link": "https://github.com/saranatour1/starrynight",
+      "mainTechnologies": ["sveltekit", "postgresSQL", "EmailJs"],
+      "flag": false
+    }
+  ],
+  "other-projects": [
+    {
+      "name": "Time-zones",
+      "link": "https://github.com/saranatour1/TimeZones-in-Svelte",
+      "mainTechnologies": ["tailwindcss", "svelte"],
+      "flag": true
+    },
+    {
+      "name": "color-scroll",
+      "link": "https://github.com/saranatour1/Lazy--color-scroll",
+      "mainTechnologies": ["javascript"],
+      "flag": true
+    },
+    {
+      "name": "image-gallery",
+      "link": "https://github.com/saranatour1/image-gallery",
+      "flag": true,
+      "mainTechnologies": ["svelte"]
+    },
+    {
+      "name": "Personal-website",
+      "link": "https://github.com/saranatour1/Personal-Website",
+      "mainTechnologies": ["Astro", "Tailwindcss"],
+      "flag": true
+    }
+  ],
+  "interests": [
+    {
+      "name": "time zones",
+      "reason": "Time differences amaze me quite a lot, if you haven't seen that already from the amount of time related things I have."
+    },
+    {
+      "name": "Sustainability & sustainable power generations",
+      "reason": "I like to see the world in green, and Power to be given to everyone, everywhere. <a href='https://www.anker.com/'>anker</a>"
+    },
+    {
+      "name": "small homes (specifically container houses)",
+      "reason": "I want to make my own small home one day, lookup <a href='https://www.iconbuild.com/'>iconbuild</a>"
+    },
+    {
+      "name": "documentaries on youtube",
+      "reason": "you can message/email me if interested!"
+    }
+  ],
+  "socials": [
+    { "name": "linkedin", "link": "PUBLIC_LINKEDIN"},
+    { "name": "github", "link": "PUBLIC_GITHUB"},
+    { "name": "email", "link": "PUBLIC_EMAIL"}
+  ]
+}
